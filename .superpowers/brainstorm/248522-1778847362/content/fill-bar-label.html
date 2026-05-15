@@ -1,0 +1,239 @@
+<h2>How should the fill bar identify itself?</h2>
+<p class="subtitle">
+  Three approaches for adding context to the injected bar. The bar sits directly
+  below HubSpot's recipient field.
+</p>
+
+<style>
+  /* Mimics the actual extension styles */
+  .hs-mock {
+    font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #33475b;
+    background: #fff;
+    border: 1px solid #cbd6e2;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 4px;
+  }
+  .hs-mock-field-label {
+    font-size: 11px;
+    color: #7c98b6;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .hs-mock-field {
+    border: 1px solid #cbd6e2;
+    border-radius: 4px;
+    padding: 6px 8px;
+    background: #fff;
+    color: #33475b;
+    font-size: 13px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .hs-mock-tag {
+    background: #e5f5f8;
+    border: 1px solid #b0dde8;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 12px;
+    color: #00a4c4;
+  }
+  .hs-mock-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 6px 8px;
+    background: #f5f8fa;
+    border: 1px solid #cbd6e2;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #33475b;
+    box-sizing: border-box;
+  }
+  .hs-mock-bar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 6px;
+    padding: 7px 8px;
+    background: #f5f8fa;
+    border: 1px solid #cbd6e2;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #33475b;
+    box-sizing: border-box;
+  }
+  .hs-mock-bar-col .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hs-mock-bar select {
+    flex: 1;
+    padding: 3px 6px;
+    border: 1px solid #cbd6e2;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 12px;
+    color: #33475b;
+  }
+  .hs-mock-bar-col select {
+    flex: 1;
+    padding: 3px 6px;
+    border: 1px solid #cbd6e2;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 12px;
+    color: #33475b;
+  }
+  .hs-mock-toggle {
+    display: flex;
+    border: 1px solid #cbd6e2;
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .hs-mock-toggle span {
+    padding: 3px 7px;
+    background: #fff;
+    font-size: 11px;
+    color: #33475b;
+  }
+  .hs-mock-toggle span.on {
+    background: #00a4c4;
+    color: #fff;
+  }
+  .hs-mock-fill {
+    padding: 4px 12px;
+    background: #ff7a59;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hs-mock-bar-label {
+    font-size: 11px;
+    color: #7c98b6;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hs-mock-bar-heading {
+    font-size: 11px;
+    color: #7c98b6;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+  }
+  .hs-context-label {
+    font-size: 11px;
+    color: #7c98b6;
+    margin-bottom: 1px;
+  }
+</style>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Inline prefix label</h3>
+      <p>
+        A compact uppercase label at the left of the bar — same line as the
+        controls. Zero extra height.
+      </p>
+      <div class="hs-mock" style="margin-top: 10px">
+        <div class="hs-mock-field">
+          <span class="hs-mock-tag">alice@example.com ×</span>
+        </div>
+        <div class="hs-mock-bar">
+          <span class="hs-mock-bar-label">Recipient list</span>
+          <select>
+            <option>QA Team (3)</option>
+          </select>
+          <div class="hs-mock-toggle">
+            <span class="on">Replace</span><span>Append</span>
+          </div>
+          <button class="hs-mock-fill">Fill</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Small heading row</h3>
+      <p>
+        A short label on its own line above the controls — like a section
+        header. Adds a few pixels of height.
+      </p>
+      <div class="hs-mock" style="margin-top: 10px">
+        <div class="hs-mock-field">
+          <span class="hs-mock-tag">alice@example.com ×</span>
+        </div>
+        <div class="hs-mock-bar-col">
+          <div class="hs-mock-bar-heading">Use recipient list</div>
+          <div class="bar-row">
+            <select>
+              <option>QA Team (3)</option>
+            </select>
+            <div class="hs-mock-toggle">
+              <span class="on">Replace</span><span>Append</span>
+            </div>
+            <button class="hs-mock-fill">Fill</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>No explicit label — rename controls</h3>
+      <p>
+        Keep the bar single-line but rename the button to "Fill from list" and
+        format the dropdown entry as "QA Team — 3 addresses". Context from the
+        controls themselves.
+      </p>
+      <div class="hs-mock" style="margin-top: 10px">
+        <div class="hs-mock-field">
+          <span class="hs-mock-tag">alice@example.com ×</span>
+        </div>
+        <div class="hs-mock-bar">
+          <select
+            style="
+              flex: 1;
+              padding: 3px 6px;
+              border: 1px solid #cbd6e2;
+              border-radius: 3px;
+              background: #fff;
+              font-size: 12px;
+              color: #33475b;
+            "
+          >
+            <option>QA Team — 3 addresses</option>
+          </select>
+          <div class="hs-mock-toggle">
+            <span class="on">Replace</span><span>Append</span>
+          </div>
+          <button class="hs-mock-fill">Fill from list</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

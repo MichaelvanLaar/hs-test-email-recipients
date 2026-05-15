@@ -1,0 +1,200 @@
+<h2>Where should popup context live?</h2>
+<p class="subtitle">
+  The popup is 320 px wide. Three approaches for making the Fill tab more
+  self-explanatory.
+</p>
+
+<style>
+  .hs-popup-mock {
+    font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #33475b;
+    background: #fff;
+    border: 1px solid #c8d6df;
+    border-radius: 6px;
+    width: 220px;
+    padding: 10px 10px 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  .hs-mock-tabs {
+    display: flex;
+    border-bottom: 2px solid #cbd6e2;
+    margin-bottom: 10px;
+  }
+  .hs-mock-tab {
+    padding: 5px 12px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #7c98b6;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+  }
+  .hs-mock-tab.active {
+    border-bottom-color: #00a4c4;
+    color: #00a4c4;
+  }
+  .hs-mock-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+  }
+  .hs-mock-row select {
+    flex: 1;
+    padding: 4px 6px;
+    border: 1px solid #cbd6e2;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #33475b;
+    background: #fff;
+  }
+  .hs-mock-toggle {
+    display: flex;
+    border: 1px solid #cbd6e2;
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .hs-mock-toggle span {
+    padding: 3px 7px;
+    background: #fff;
+    font-size: 11px;
+    color: #33475b;
+  }
+  .hs-mock-toggle span.on {
+    background: #00a4c4;
+    color: #fff;
+  }
+  .hs-mock-fill-btn {
+    padding: 4px 10px;
+    background: #ff7a59;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: default;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hs-mock-subtitle {
+    font-size: 11px;
+    color: #7c98b6;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .hs-mock-field-label {
+    font-size: 11px;
+    color: #7c98b6;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .hs-mock-field-group {
+    margin-bottom: 7px;
+  }
+  .hs-mock-hint {
+    font-size: 11px;
+    color: #7c98b6;
+    margin-top: 4px;
+  }
+</style>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Tab subtitle</h3>
+      <p>
+        One short sentence below the tabs in each view, explaining what the tab
+        does. Controls stay the same.
+      </p>
+      <div class="hs-popup-mock">
+        <div class="hs-mock-tabs">
+          <div class="hs-mock-tab active">Fill</div>
+          <div class="hs-mock-tab">Manage</div>
+        </div>
+        <div class="hs-mock-subtitle">
+          Choose a recipient list and fill the HubSpot email field.
+        </div>
+        <div class="hs-mock-row">
+          <select>
+            <option>QA Team (3)</option>
+          </select>
+        </div>
+        <div class="hs-mock-row">
+          <div class="hs-mock-toggle">
+            <span class="on">Replace</span><span>Append</span>
+          </div>
+          <button class="hs-mock-fill-btn">Fill</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Control labels</h3>
+      <p>
+        Small labels above the dropdown ("Recipient list") and toggle ("Fill
+        mode"). No description sentence — context comes from the controls.
+      </p>
+      <div class="hs-popup-mock">
+        <div class="hs-mock-tabs">
+          <div class="hs-mock-tab active">Fill</div>
+          <div class="hs-mock-tab">Manage</div>
+        </div>
+        <div class="hs-mock-field-group">
+          <span class="hs-mock-field-label">Recipient list</span>
+          <div class="hs-mock-row" style="margin-bottom: 0">
+            <select>
+              <option>QA Team (3)</option>
+            </select>
+          </div>
+        </div>
+        <div class="hs-mock-field-group">
+          <span class="hs-mock-field-label">Fill mode</span>
+          <div class="hs-mock-row" style="margin-bottom: 0">
+            <div class="hs-mock-toggle">
+              <span class="on">Replace</span><span>Append</span>
+            </div>
+            <button class="hs-mock-fill-btn">Fill</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Inline label + hint text</h3>
+      <p>
+        One inline label for the dropdown only ("Recipient list"), and a soft
+        hint below the controls. Lighter than B, more specific than A.
+      </p>
+      <div class="hs-popup-mock">
+        <div class="hs-mock-tabs">
+          <div class="hs-mock-tab active">Fill</div>
+          <div class="hs-mock-tab">Manage</div>
+        </div>
+        <div class="hs-mock-field-group">
+          <span class="hs-mock-field-label">Recipient list</span>
+          <div class="hs-mock-row" style="margin-bottom: 0">
+            <select>
+              <option>QA Team (3)</option>
+            </select>
+          </div>
+        </div>
+        <div class="hs-mock-row" style="margin-top: 7px">
+          <div class="hs-mock-toggle">
+            <span class="on">Replace</span><span>Append</span>
+          </div>
+          <button class="hs-mock-fill-btn">Fill</button>
+        </div>
+        <div class="hs-mock-hint">Open HubSpot and the send dialog first.</div>
+      </div>
+    </div>
+  </div>
+</div>
