@@ -5,6 +5,7 @@ const nativeSetter = Object.getOwnPropertyDescriptor(
 ).set;
 
 let injectedBar = null;
+let buildingBar = false;
 let barMode = "replace";
 
 // ── Storage (inlined — ES module imports are blocked by HubSpot's CSP) ───────
@@ -171,19 +172,23 @@ async function buildBar(fieldEl) {
 function removeBar() {
   injectedBar?.remove();
   injectedBar = null;
+  buildingBar = false;
 }
 
 // ── MutationObserver ─────────────────────────────────────────────────────────
 
 const observer = new MutationObserver(() => {
   const fieldEl = document.querySelector(FIELD_SELECTOR);
-  if (fieldEl && !injectedBar) {
+  if (fieldEl && !injectedBar && !buildingBar) {
+    buildingBar = true;
     injectStylesheet();
     buildBar(fieldEl).then((bar) => {
+      buildingBar = false;
+      if (!fieldEl.isConnected) return;
       injectedBar = bar;
       fieldEl.insertAdjacentElement("afterend", bar);
     });
-  } else if (!fieldEl && injectedBar) {
+  } else if (!fieldEl && (injectedBar || buildingBar)) {
     removeBar();
   }
 });

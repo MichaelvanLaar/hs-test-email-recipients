@@ -2,6 +2,7 @@ node_modules/
 dist/
 build/
 coverage/
+temp/
 
 # Claude Code — personal files
 .claude/settings.local.json
