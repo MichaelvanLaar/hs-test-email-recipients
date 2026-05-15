@@ -7,38 +7,63 @@
   </head>
   <body class="hs-popup">
     <div class="hs-popup-tabs">
-      <div class="hs-popup-tab active" data-tab="fill">Fill</div>
-      <div class="hs-popup-tab" data-tab="manage">Manage</div>
+      <div class="hs-popup-tab active" data-tab="fill" data-i18n="tabFill">
+        Fill
+      </div>
+      <div class="hs-popup-tab" data-tab="manage" data-i18n="tabManage">
+        Manage
+      </div>
     </div>
 
     <!-- Fill tab -->
     <div class="hs-popup-view active" id="view-fill">
       <!-- Shown when no recipient field is detected on the active tab -->
       <div id="fill-info" class="hs-fill-info" hidden>
-        <p>
+        <p data-i18n="fillInfoMessage">
           No recipient field found. Open HubSpot and the send test dialog to use
           this tab.
         </p>
         <p>
-          <button class="hs-fill-info-link" id="go-to-manage">
+          <button
+            class="hs-fill-info-link"
+            id="go-to-manage"
+            data-i18n="fillInfoGoToManage"
+          >
             Go to Manage →
           </button>
-          to set up recipient lists.
+          <span data-i18n="fillInfoSetupText">to set up recipient lists.</span>
         </p>
       </div>
       <!-- Shown when a recipient field is detected -->
       <div id="fill-controls" hidden>
-        <label class="hs-field-label" for="fill-set-sel">Recipient list</label>
+        <label
+          class="hs-field-label"
+          for="fill-set-sel"
+          data-i18n="fillLabelRecipientList"
+          >Recipient list</label
+        >
         <div class="hs-row">
           <select id="fill-set-sel"></select>
         </div>
-        <label class="hs-field-label">Fill mode</label>
+        <label class="hs-field-label" data-i18n="fillLabelFillMode"
+          >Fill mode</label
+        >
         <div class="hs-row">
           <div class="hs-ext-toggle" id="fill-mode-toggle">
-            <button class="active" data-mode="replace">Replace</button>
-            <button data-mode="append">Append</button>
+            <button
+              class="active"
+              data-mode="replace"
+              data-i18n="fillModeReplace"
+            >
+              Replace
+            </button>
+            <button data-mode="append" data-i18n="fillModeAppend">
+              Append
+            </button>
           </div>
-          <button class="hs-btn-primary" id="fill-btn">Fill</button>
+          <button class="hs-btn-primary" id="fill-btn" data-i18n="fillButton">
+            Fill
+          </button>
         </div>
       </div>
       <div id="popup-status"></div>
@@ -47,8 +72,19 @@
     <!-- Manage tab -->
     <div class="hs-popup-view" id="view-manage">
       <div class="hs-row">
-        <input type="text" id="new-set-name" placeholder="New set name…" />
-        <button class="hs-btn-secondary" id="add-set-btn">Add set</button>
+        <input
+          type="text"
+          id="new-set-name"
+          placeholder="New set name…"
+          data-i18n-placeholder="newSetNamePlaceholder"
+        />
+        <button
+          class="hs-btn-secondary"
+          id="add-set-btn"
+          data-i18n="addSetButton"
+        >
+          Add set
+        </button>
       </div>
       <div id="sets-list"></div>
     </div>

@@ -1,0 +1,43 @@
+{
+  "extName": { "message": "HubSpot Test Email Recipients" },
+  "extDescription": {
+    "message": "Fill HubSpot test-email recipient fields with pre-defined address sets."
+  },
+  "tabFill": { "message": "Fill" },
+  "tabManage": { "message": "Manage" },
+  "fillInfoMessage": {
+    "message": "No recipient field found. Open HubSpot and the send test dialog to use this tab."
+  },
+  "fillInfoGoToManage": { "message": "Go to Manage →" },
+  "fillInfoSetupText": { "message": "to set up recipient lists." },
+  "fillLabelRecipientList": { "message": "Recipient list" },
+  "fillLabelFillMode": { "message": "Fill mode" },
+  "fillModeReplace": { "message": "Replace" },
+  "fillModeAppend": { "message": "Append" },
+  "fillButton": { "message": "Fill" },
+  "newSetNamePlaceholder": { "message": "New set name…" },
+  "addSetButton": { "message": "Add set" },
+  "noSetsYetOption": { "message": "No sets yet — go to Manage" },
+  "noActiveTab": { "message": "No active tab found." },
+  "filledOne": { "message": "Filled 1 address." },
+  "filledMany": {
+    "message": "Filled $COUNT$ addresses.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "contentScriptNotReachable": {
+    "message": "Content script not reachable. Is HubSpot open with the dialog?"
+  },
+  "noSetsYet": { "message": "No sets yet." },
+  "deleteButton": { "message": "Delete" },
+  "addEmailPlaceholder": { "message": "Add address…" },
+  "addEmailButton": { "message": "Add" },
+  "confirmDeleteSet": {
+    "message": "Delete \"$NAME$\"?",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "barNoSets": {
+    "message": "No sets — add some via the extension popup."
+  },
+  "barHeading": { "message": "Use recipient list" },
+  "inputNotFound": { "message": "Input not found — is the dialog open?" }
+}

@@ -1,0 +1,47 @@
+{
+  "extName": { "message": "HubSpot Test-E-Mail-Empfänger" },
+  "extDescription": {
+    "message": "Füllt HubSpot-Testmail-Empfängerfelder mit vordefinierten Adresslisten."
+  },
+  "tabFill": { "message": "Ausfüllen" },
+  "tabManage": { "message": "Verwalten" },
+  "fillInfoMessage": {
+    "message": "Kein Empfängerfeld gefunden. Öffne HubSpot und den Testversand-Dialog, um diesen Tab zu nutzen."
+  },
+  "fillInfoGoToManage": { "message": "Zu Verwalten →" },
+  "fillInfoSetupText": { "message": "um Empfängerlisten einzurichten." },
+  "fillLabelRecipientList": { "message": "Empfängerliste" },
+  "fillLabelFillMode": { "message": "Füllmodus" },
+  "fillModeReplace": { "message": "Ersetzen" },
+  "fillModeAppend": { "message": "Ergänzen" },
+  "fillButton": { "message": "Ausfüllen" },
+  "newSetNamePlaceholder": { "message": "Name der neuen Liste…" },
+  "addSetButton": { "message": "Liste hinzufügen" },
+  "noSetsYetOption": {
+    "message": "Noch keine Listen — zu Verwalten wechseln"
+  },
+  "noActiveTab": { "message": "Kein aktiver Tab gefunden." },
+  "filledOne": { "message": "1 Adresse eingefügt." },
+  "filledMany": {
+    "message": "$COUNT$ Adressen eingefügt.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "contentScriptNotReachable": {
+    "message": "Content-Script nicht erreichbar. Ist HubSpot mit dem Dialog geöffnet?"
+  },
+  "noSetsYet": { "message": "Noch keine Listen." },
+  "deleteButton": { "message": "Löschen" },
+  "addEmailPlaceholder": { "message": "Adresse hinzufügen…" },
+  "addEmailButton": { "message": "Hinzufügen" },
+  "confirmDeleteSet": {
+    "message": "„$NAME$“ löschen?",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "barNoSets": {
+    "message": "Keine Listen – füge welche im Erweiterungspopup hinzu."
+  },
+  "barHeading": { "message": "Empfängerliste verwenden" },
+  "inputNotFound": {
+    "message": "Eingabe nicht gefunden – ist der Dialog geöffnet?"
+  }
+}

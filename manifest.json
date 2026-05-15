@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "HubSpot Test Email Recipients",
+  "name": "__MSG_extName__",
   "version": "0.1.0",
-  "description": "Fill HubSpot test-email recipient fields with pre-defined address sets.",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "permissions": ["storage", "activeTab"],
   "host_permissions": ["*://*.hubspot.com/*"],
   "action": {

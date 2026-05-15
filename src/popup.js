@@ -12,6 +12,15 @@ function setStatus(msg, kind = "") {
   el.className = kind;
 }
 
+function applyI18n() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.textContent = chrome.i18n.getMessage(el.dataset.i18n);
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    el.placeholder = chrome.i18n.getMessage(el.dataset.i18nPlaceholder);
+  });
+}
+
 // ── Tab switching ─────────────────────────────────────────────────────────────
 
 function switchTab(name) {
@@ -72,7 +81,7 @@ async function renderFill() {
 
   if (sets.length === 0) {
     const opt = document.createElement("option");
-    opt.textContent = "No sets yet — go to Manage";
+    opt.textContent = chrome.i18n.getMessage("noSetsYetOption");
     opt.disabled = true;
     sel.appendChild(opt);
     fillBtn.disabled = true;
@@ -114,7 +123,7 @@ document.getElementById("fill-btn").addEventListener("click", async () => {
 
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (!tab?.id) {
-    setStatus("No active tab found.", "error");
+    setStatus(chrome.i18n.getMessage("noActiveTab"), "error");
     return;
   }
 
@@ -124,12 +133,14 @@ document.getElementById("fill-btn").addEventListener("click", async () => {
       emails: set.emails,
       mode: fillMode,
     });
-    setStatus(`Filled ${set.emails.length} address(es).`, "success");
+    const count = set.emails.length;
+    const msg =
+      count === 1
+        ? chrome.i18n.getMessage("filledOne")
+        : chrome.i18n.getMessage("filledMany", [count.toString()]);
+    setStatus(msg, "success");
   } catch {
-    setStatus(
-      "Content script not reachable. Is HubSpot open with the dialog?",
-      "error",
-    );
+    setStatus(chrome.i18n.getMessage("contentScriptNotReachable"), "error");
   }
 });
 
@@ -141,9 +152,13 @@ async function renderManage() {
   list.innerHTML = "";
 
   if (sets.length === 0) {
-    list.innerHTML = '<div class="hs-empty">No sets yet.</div>';
+    list.innerHTML = `<div class="hs-empty">${chrome.i18n.getMessage("noSetsYet")}</div>`;
     return;
   }
+
+  const deleteBtnLabel = chrome.i18n.getMessage("deleteButton");
+  const addEmailPlh = chrome.i18n.getMessage("addEmailPlaceholder");
+  const addEmailBtnLabel = chrome.i18n.getMessage("addEmailButton");
 
   sets.forEach((set) => {
     const item = document.createElement("div");
@@ -152,7 +167,7 @@ async function renderManage() {
     item.innerHTML = `
       <div class="hs-set-header">
         <span class="hs-set-name" contenteditable="true">${esc(set.name)}</span>
-        <button class="hs-btn-danger js-del">Delete</button>
+        <button class="hs-btn-danger js-del">${deleteBtnLabel}</button>
       </div>
       <div class="hs-set-body open">
         ${set.emails
@@ -165,8 +180,8 @@ async function renderManage() {
           )
           .join("")}
         <div class="hs-row" style="margin-top:6px">
-          <input type="email" class="js-add-email-input" placeholder="Add address…" />
-          <button class="hs-btn-secondary js-add-email">Add</button>
+          <input type="email" class="js-add-email-input" placeholder="${addEmailPlh}" />
+          <button class="hs-btn-secondary js-add-email">${addEmailBtnLabel}</button>
         </div>
       </div>`;
 
@@ -188,7 +203,8 @@ async function renderManage() {
 
     // Delete set
     item.querySelector(".js-del").addEventListener("click", async () => {
-      if (!confirm(`Delete "${set.name}"?`)) return;
+      if (!confirm(chrome.i18n.getMessage("confirmDeleteSet", [set.name])))
+        return;
       await deleteSet(set.id);
       renderManage();
     });
@@ -237,4 +253,5 @@ document.getElementById("new-set-name").addEventListener("keydown", (e) => {
 });
 
 // Init
+applyI18n();
 renderFill();

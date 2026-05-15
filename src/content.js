@@ -56,7 +56,7 @@ async function typeEmail(input, email) {
 async function fillRecipients(fieldEl, emails, mode) {
   const input = fieldEl.querySelector('input[role="combobox"]');
   if (!input) {
-    showBarError("Input not found — is the dialog open?");
+    showBarError(chrome.i18n.getMessage("inputNotFound"));
     return;
   }
   if (mode === "replace") {
@@ -96,14 +96,13 @@ async function buildBar(fieldEl) {
   bar.id = "hs-ext-fill-bar";
 
   if (sets.length === 0) {
-    bar.innerHTML =
-      '<span class="hs-ext-bar-msg">No sets — add some via the extension popup.</span>';
+    bar.innerHTML = `<span class="hs-ext-bar-msg">${chrome.i18n.getMessage("barNoSets")}</span>`;
     return bar;
   }
 
   const heading = document.createElement("span");
   heading.className = "hs-ext-bar-heading";
-  heading.textContent = "Use recipient list";
+  heading.textContent = chrome.i18n.getMessage("barHeading");
 
   const controls = document.createElement("div");
   controls.className = "hs-ext-bar-controls";
@@ -124,7 +123,9 @@ async function buildBar(fieldEl) {
   ["replace", "append"].forEach((mode, i) => {
     const btn = document.createElement("button");
     btn.dataset.mode = mode;
-    btn.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+    btn.textContent = chrome.i18n.getMessage(
+      mode === "replace" ? "fillModeReplace" : "fillModeAppend",
+    );
     if (i === 0) btn.classList.add("active");
     btn.addEventListener("click", () => {
       toggle
@@ -139,7 +140,7 @@ async function buildBar(fieldEl) {
   // Fill button
   const fillBtn = document.createElement("button");
   fillBtn.className = "hs-ext-fill-btn";
-  fillBtn.textContent = "Fill";
+  fillBtn.textContent = chrome.i18n.getMessage("fillButton");
   fillBtn.addEventListener("click", async () => {
     const set = sets.find((s) => s.id === sel.value);
     if (!set) return;
