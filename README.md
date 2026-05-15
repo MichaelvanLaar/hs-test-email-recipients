@@ -1,6 +1,6 @@
-# HubSpot Test Email Recipients
+# Recipient Lists for HubSpot Test Emails
 
-A Chrome extension that fills HubSpot's test-email recipient field with pre-defined address lists, so you don't have to type them by hand every time.
+A Chrome extension that fills HubSpot’s test-email recipient field with pre-defined address lists, so you don’t have to type them by hand every time. Very useful if you have several groups of test recipients you use regularly.
 
 ## Features
 
@@ -98,7 +98,7 @@ manifest.json      Chrome MV3 manifest
 
 - Manifest V3 only
 - Recipient sets are stored in `chrome.storage.local` — never `chrome.storage.sync` (intentionally local to the browser profile)
-- The content script does not use ES module imports (blocked by HubSpot's CSP); `chrome.i18n` and `chrome.storage` are used directly
+- The content script does not use ES module imports (blocked by HubSpot’s CSP); `chrome.i18n` and `chrome.storage` are used directly
 
 ## License
 
