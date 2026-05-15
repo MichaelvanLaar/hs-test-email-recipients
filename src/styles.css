@@ -96,7 +96,9 @@
 
 /* === Popup (320 px wide) === */
 body.hs-popup {
-  width: 320px;
+  width: fit-content;
+  min-width: 320px;
+  max-width: 480px;
   min-height: 180px;
   margin: 0;
   padding: 12px;
