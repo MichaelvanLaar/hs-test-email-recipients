@@ -13,15 +13,33 @@
 
     <!-- Fill tab -->
     <div class="hs-popup-view active" id="view-fill">
-      <div class="hs-row">
-        <select id="fill-set-sel"></select>
+      <!-- Shown when no recipient field is detected on the active tab -->
+      <div id="fill-info" class="hs-fill-info" hidden>
+        <p>
+          No recipient field found. Open HubSpot and the send test dialog to use
+          this tab.
+        </p>
+        <p>
+          <button class="hs-fill-info-link" id="go-to-manage">
+            Go to Manage →
+          </button>
+          to set up recipient lists.
+        </p>
       </div>
-      <div class="hs-row">
-        <div class="hs-ext-toggle" id="fill-mode-toggle">
-          <button class="active" data-mode="replace">Replace</button>
-          <button data-mode="append">Append</button>
+      <!-- Shown when a recipient field is detected -->
+      <div id="fill-controls" hidden>
+        <label class="hs-field-label" for="fill-set-sel">Recipient list</label>
+        <div class="hs-row">
+          <select id="fill-set-sel"></select>
         </div>
-        <button class="hs-btn-primary" id="fill-btn">Fill</button>
+        <label class="hs-field-label">Fill mode</label>
+        <div class="hs-row">
+          <div class="hs-ext-toggle" id="fill-mode-toggle">
+            <button class="active" data-mode="replace">Replace</button>
+            <button data-mode="append">Append</button>
+          </div>
+          <button class="hs-btn-primary" id="fill-btn">Fill</button>
+        </div>
       </div>
       <div id="popup-status"></div>
     </div>
