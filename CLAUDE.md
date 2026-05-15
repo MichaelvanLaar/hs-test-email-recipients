@@ -6,7 +6,6 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 
 | File | Purpose |
 |------|---------|
-| `.claude/learnings.md` | Per-session corrections that accumulate over time |
 | `.claude/settings.json` | Permissions, hooks, environment variables |
 | `.claudeignore` | Paths excluded from Claude Code indexing |
 | `.gitignore` | Git ignore patterns |
@@ -14,11 +13,12 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 | `LICENSE` | MIT license |
 | `manifest.json` | Chrome MV3 manifest — permissions, content scripts, popup, icons |
 | `package.json` | Node dependencies, test command, Jest configuration |
-| `scripts/generate-icons.js` | TODO: add description |
+| `scripts/generate-icons.js` | Generates 16/48/128 px PNG icons from the SVG source using sharp |
 | `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
 
 ## Commands
 
+- **Install:** `npm install --legacy-peer-deps` (required — jest-chrome@0.8.0 has a peer conflict with jest@29)
 - **Test:** `npm test`
 - **Build:** None — load unpacked from repo root in `chrome://extensions`
 - **Format:** `npx prettier --write .` (runs automatically via PostToolUse hook on every edit)
