@@ -14,6 +14,7 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 | `LICENSE` | MIT license |
 | `manifest.json` | TODO: add description |
 | `package.json` | TODO: add description |
+| `scripts/generate-icons.py` | TODO: add description |
 | `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
 
 ## Commands
