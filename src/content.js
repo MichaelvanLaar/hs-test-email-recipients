@@ -197,7 +197,8 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 // ── Popup message handler ────────────────────────────────────────────────────
 
-chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (sender.id !== chrome.runtime.id) return;
   if (msg.action === "checkField") {
     sendResponse({ present: injectedBar !== null });
     return;
@@ -206,5 +207,6 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   sendResponse({ ok: true }); // acknowledge before async work so sendMessage resolves
   const fieldEl = document.querySelector(FIELD_SELECTOR);
   if (!fieldEl) return;
-  fillRecipients(fieldEl, msg.emails, msg.mode);
+  const mode = msg.mode === "append" ? "append" : "replace";
+  fillRecipients(fieldEl, msg.emails, mode);
 });

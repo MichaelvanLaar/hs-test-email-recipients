@@ -3,7 +3,11 @@ import { getSets, createSet, updateSet, deleteSet } from "./storage.js";
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function esc(str) {
-  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function setStatus(msg, kind = "") {
