@@ -66,6 +66,9 @@ async function fillRecipients(fieldEl, emails, mode) {
   for (const email of emails) {
     await typeEmail(input, email);
   }
+  nativeSetter.call(input, "");
+  input.dispatchEvent(new Event("input", { bubbles: true }));
+  input.blur();
 }
 
 // ── Fill bar ────────────────────────────────────────────────────────────────
