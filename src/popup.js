@@ -229,11 +229,7 @@ document.getElementById("add-set-btn").addEventListener("click", async () => {
   await createSet(name, []);
   input.value = "";
   // Switch to manage view so user sees the new set
-  document.querySelector('[data-tab="manage"]').classList.add("active");
-  document.getElementById("view-manage").classList.add("active");
-  document.querySelector('[data-tab="fill"]').classList.remove("active");
-  document.getElementById("view-fill").classList.remove("active");
-  renderManage();
+  switchTab("manage");
 });
 
 document.getElementById("new-set-name").addEventListener("keydown", (e) => {
