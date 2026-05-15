@@ -1,24 +1,24 @@
 {
   "extName": { "message": "HubSpot Test-E-Mail-Empfänger" },
   "extDescription": {
-    "message": "Füllt HubSpot-Testmail-Empfängerfelder mit vordefinierten Adresslisten."
+    "message": "Befüllt HubSpot-Test-E-Mail-Empfängerfelder mit vordefinierten Adresslisten."
   },
   "tabFill": { "message": "Ausfüllen" },
   "tabManage": { "message": "Verwalten" },
   "fillInfoMessage": {
-    "message": "Kein Empfängerfeld gefunden. Öffnen Sie HubSpot und den Testversand-Dialog, um diesen Tab zu nutzen."
+    "message": "Kein Empfängerfeld gefunden. Öffnen Sie HubSpot und den Test-E-Mail-Versand-Dialog, um diesen Tab zu nutzen."
   },
-  "fillInfoGoToManage": { "message": "Zu Verwalten →" },
+  "fillInfoGoToManage": { "message": "Zur Listenverwaltung →" },
   "fillInfoSetupText": { "message": "um Empfängerlisten einzurichten." },
   "fillLabelRecipientList": { "message": "Empfängerliste" },
-  "fillLabelFillMode": { "message": "Füllmodus" },
+  "fillLabelFillMode": { "message": "Befüllmodus" },
   "fillModeReplace": { "message": "Ersetzen" },
   "fillModeAppend": { "message": "Ergänzen" },
   "fillButton": { "message": "Ausfüllen" },
-  "newSetNamePlaceholder": { "message": "Name der neuen Liste…" },
+  "newSetNamePlaceholder": { "message": "Name der neuen Liste …" },
   "addSetButton": { "message": "Liste hinzufügen" },
   "noSetsYetOption": {
-    "message": "Noch keine Listen — zu Verwalten wechseln"
+    "message": "Noch keine Listen — zur Listenverwaltung wechseln, um Empfängerlisten hinzuzufügen."
   },
   "noActiveTab": { "message": "Kein aktiver Tab gefunden." },
   "filledOne": { "message": "1 Adresse eingefügt." },
@@ -27,7 +27,7 @@
     "placeholders": { "count": { "content": "$1" } }
   },
   "contentScriptNotReachable": {
-    "message": "Content-Script nicht erreichbar. Ist HubSpot mit dem Dialog geöffnet?"
+    "message": "Content-Script nicht erreichbar. Ist HubSpot mit dem Test-E-Mail-Versand-Dialog geöffnet?"
   },
   "noSetsYet": { "message": "Noch keine Listen." },
   "deleteButton": { "message": "Löschen" },
@@ -38,10 +38,10 @@
     "placeholders": { "name": { "content": "$1" } }
   },
   "barNoSets": {
-    "message": "Keine Listen – fügen Sie welche im Erweiterungspopup hinzu."
+    "message": "Keine Listen – fügen Sie welche im Pop-up der Browser-Erweiteurng hinzu."
   },
   "barHeading": { "message": "Empfängerliste verwenden" },
   "inputNotFound": {
-    "message": "Eingabe nicht gefunden – ist der Dialog geöffnet?"
+    "message": "Eingabe nicht gefunden – ist der Test-E-Mail-Versand-Dialog geöffnet?"
   }
 }
