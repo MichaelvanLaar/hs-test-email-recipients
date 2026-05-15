@@ -31,14 +31,14 @@
   },
   "noSetsYet": { "message": "Noch keine Listen." },
   "deleteButton": { "message": "Löschen" },
-  "addEmailPlaceholder": { "message": "E-Mail-Adresse hinzufügen…" },
+  "addEmailPlaceholder": { "message": "E-Mail-Adresse hinzufügen …" },
   "addEmailButton": { "message": "Hinzufügen" },
   "confirmDeleteSet": {
     "message": "„$NAME$“ löschen?",
     "placeholders": { "name": { "content": "$1" } }
   },
   "barNoSets": {
-    "message": "Keine Listen – fügen Sie welche im Pop-up der Browser-Erweiteurng hinzu."
+    "message": "Keine Listen. Öffnen Sie das Pop-up der Erweiterung."
   },
   "barHeading": { "message": "Empfängerliste verwenden" },
   "inputNotFound": {

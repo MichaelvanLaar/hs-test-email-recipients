@@ -28,7 +28,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["src/styles.css"],
+      "resources": ["src/styles.css", "icons/icon16.png"],
       "matches": ["*://*.hubspot.com/*"]
     }
   ]

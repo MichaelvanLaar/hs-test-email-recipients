@@ -1,23 +1,25 @@
 {
   "extName": { "message": "HubSpot Test Email Recipients" },
   "extDescription": {
-    "message": "Fill HubSpot test-email recipient fields with pre-defined address sets."
+    "message": "Fill HubSpot test-email recipient fields with pre-defined address lists."
   },
   "tabFill": { "message": "Fill" },
   "tabManage": { "message": "Manage" },
   "fillInfoMessage": {
-    "message": "No recipient field found. Open HubSpot and the send test dialog to use this tab."
+    "message": "No recipient field found. Open HubSpot and the send test email dialog to use this tab."
   },
-  "fillInfoGoToManage": { "message": "Go to Manage →" },
+  "fillInfoGoToManage": { "message": "Go to list management →" },
   "fillInfoSetupText": { "message": "to set up recipient lists." },
   "fillLabelRecipientList": { "message": "Recipient list" },
   "fillLabelFillMode": { "message": "Fill mode" },
   "fillModeReplace": { "message": "Replace" },
   "fillModeAppend": { "message": "Append" },
   "fillButton": { "message": "Fill" },
-  "newSetNamePlaceholder": { "message": "New set name…" },
-  "addSetButton": { "message": "Add set" },
-  "noSetsYetOption": { "message": "No sets yet — go to Manage" },
+  "newSetNamePlaceholder": { "message": "New set name …" },
+  "addSetButton": { "message": "Add list" },
+  "noSetsYetOption": {
+    "message": "No lists yet — go to list management to add recipient lists."
+  },
   "noActiveTab": { "message": "No active tab found." },
   "filledOne": { "message": "Filled 1 address." },
   "filledMany": {
@@ -25,19 +27,21 @@
     "placeholders": { "count": { "content": "$1" } }
   },
   "contentScriptNotReachable": {
-    "message": "Content script not reachable. Is HubSpot open with the dialog?"
+    "message": "Content script not reachable. Is HubSpot open with the send test email dialog?"
   },
-  "noSetsYet": { "message": "No sets yet." },
+  "noSetsYet": { "message": "No lists yet." },
   "deleteButton": { "message": "Delete" },
-  "addEmailPlaceholder": { "message": "Add email address…" },
+  "addEmailPlaceholder": { "message": "Add email address …" },
   "addEmailButton": { "message": "Add" },
   "confirmDeleteSet": {
     "message": "Delete \"$NAME$\"?",
     "placeholders": { "name": { "content": "$1" } }
   },
   "barNoSets": {
-    "message": "No sets — add some via the extension popup."
+    "message": "No lists. Open the pop-up of the extension."
   },
   "barHeading": { "message": "Use recipient list" },
-  "inputNotFound": { "message": "Input not found — is the dialog open?" }
+  "inputNotFound": {
+    "message": "Input not found — is the send test email dialog open?"
+  }
 }
