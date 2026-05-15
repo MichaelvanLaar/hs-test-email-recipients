@@ -22,8 +22,13 @@
     {
       "matches": ["*://*.hubspot.com/*"],
       "js": ["src/content.js"],
-      "type": "module",
       "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/styles.css"],
+      "matches": ["*://*.hubspot.com/*"]
     }
   ]
 }

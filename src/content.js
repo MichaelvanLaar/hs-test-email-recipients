@@ -1,5 +1,3 @@
-import { getSets } from "./storage.js";
-
 const FIELD_SELECTOR = '[data-test-id="email-user-recipients-select"]';
 const nativeSetter = Object.getOwnPropertyDescriptor(
   HTMLInputElement.prototype,
@@ -8,6 +6,16 @@ const nativeSetter = Object.getOwnPropertyDescriptor(
 
 let injectedBar = null;
 let barMode = "replace";
+
+// ── Storage (inlined — ES module imports are blocked by HubSpot's CSP) ───────
+
+function getSets() {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(["sets"], (result) =>
+      resolve(result["sets"] ?? []),
+    );
+  });
+}
 
 // ── Stylesheet ──────────────────────────────────────────────────────────────
 
@@ -160,8 +168,9 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 // ── Popup message handler ────────────────────────────────────────────────────
 
-chrome.runtime.onMessage.addListener((msg) => {
+chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg.action !== "fill") return;
+  sendResponse({ ok: true }); // acknowledge before async work so sendMessage resolves
   const fieldEl = document.querySelector(FIELD_SELECTOR);
   if (!fieldEl) return;
   fillRecipients(fieldEl, msg.emails, msg.mode);
