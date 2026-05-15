@@ -101,6 +101,13 @@ async function buildBar(fieldEl) {
     return bar;
   }
 
+  const heading = document.createElement("span");
+  heading.className = "hs-ext-bar-heading";
+  heading.textContent = "Use recipient list";
+
+  const controls = document.createElement("div");
+  controls.className = "hs-ext-bar-controls";
+
   // Set selector
   const sel = document.createElement("select");
   sel.className = "hs-ext-set-select";
@@ -141,9 +148,12 @@ async function buildBar(fieldEl) {
     fillBtn.disabled = false;
   });
 
-  bar.appendChild(sel);
-  bar.appendChild(toggle);
-  bar.appendChild(fillBtn);
+  controls.appendChild(sel);
+  controls.appendChild(toggle);
+  controls.appendChild(fillBtn);
+
+  bar.appendChild(heading);
+  bar.appendChild(controls);
   return bar;
 }
 
@@ -172,6 +182,10 @@ observer.observe(document.body, { childList: true, subtree: true });
 // ── Popup message handler ────────────────────────────────────────────────────
 
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (msg.action === "checkField") {
+    sendResponse({ present: injectedBar !== null });
+    return;
+  }
   if (msg.action !== "fill") return;
   sendResponse({ ok: true }); // acknowledge before async work so sendMessage resolves
   const fieldEl = document.querySelector(FIELD_SELECTOR);
