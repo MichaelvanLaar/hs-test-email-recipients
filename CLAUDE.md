@@ -6,24 +6,30 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 
 | File | Purpose |
 |------|---------|
-| `.claude/learnings.md` | TODO: add description |
+| `.claude/learnings.md` | Per-session corrections that accumulate over time |
 | `.claude/settings.json` | Permissions, hooks, environment variables |
 | `.claudeignore` | Paths excluded from Claude Code indexing |
 | `.gitignore` | Git ignore patterns |
 | `CLAUDE.md` | Project instructions, loaded every message |
 | `LICENSE` | MIT license |
-| `manifest.json` | TODO: add description |
-| `package.json` | TODO: add description |
-| `scripts/generate-icons.py` | TODO: add description |
+| `manifest.json` | Chrome MV3 manifest — permissions, content scripts, popup, icons |
+| `package.json` | Node dependencies, test command, Jest configuration |
+| `scripts/generate-icons.py` | Generates minimal teal square PNG icons (no external deps) |
 | `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
 
 ## Commands
 
-TODO: Add build, lint, and test commands once the stack is chosen.
+- **Test:** `npm test`
+- **Build:** None — load unpacked from repo root in `chrome://extensions`
+- **Lint/Format:** None configured yet
 
 ## Structure
 
-TODO: Document directory layout once scaffolded (e.g. `src/`, `popup/`, `content/`, `manifest.json`).
+- `src/` — Extension source: `content.js`, `popup.js`, `popup.html`, `storage.js`, `styles.css`
+- `tests/` — Jest unit tests
+- `scripts/` — Utility scripts (icon generation, CLAUDE.md sync)
+- `icons/` — Extension icons (16 px, 48 px, 128 px)
+- `manifest.json` — MV3 manifest (root level, not inside `src/`)
 
 ## Conventions
 
