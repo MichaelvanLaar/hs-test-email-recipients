@@ -12,6 +12,8 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 | `.gitignore` | Git ignore patterns |
 | `CLAUDE.md` | Project instructions, loaded every message |
 | `LICENSE` | MIT license |
+| `manifest.json` | TODO: add description |
+| `package.json` | TODO: add description |
 | `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
 
 ## Commands

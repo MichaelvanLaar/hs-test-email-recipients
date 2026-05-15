@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "HubSpot Test Email Recipients",
+  "version": "0.1.0",
+  "description": "Fill HubSpot test-email recipient fields with pre-defined address sets.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["*://*.hubspot.com/*"],
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.hubspot.com/*"],
+      "js": ["src/content.js"],
+      "type": "module",
+      "run_at": "document_idle"
+    }
+  ]
+}
