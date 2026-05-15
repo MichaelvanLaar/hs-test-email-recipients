@@ -3,13 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "icons": "node scripts/generate-icons.js"
   },
   "devDependencies": {
     "jest": "^29.0.0",
     "jest-chrome": "^0.8.0",
     "jest-environment-jsdom": "^30.4.1",
-    "prettier": "^3.8.3"
+    "prettier": "^3.8.3",
+    "sharp": "^0.34.5"
   },
   "jest": {
     "testEnvironment": "node",

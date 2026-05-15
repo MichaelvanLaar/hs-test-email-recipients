@@ -14,7 +14,7 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 | `LICENSE` | MIT license |
 | `manifest.json` | Chrome MV3 manifest — permissions, content scripts, popup, icons |
 | `package.json` | Node dependencies, test command, Jest configuration |
-| `scripts/generate-icons.py` | Generates minimal teal square PNG icons (no external deps) |
+| `scripts/generate-icons.js` | TODO: add description |
 | `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
 
 ## Commands
