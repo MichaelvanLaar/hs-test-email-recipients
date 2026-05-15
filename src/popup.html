@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HubSpot Test Email Recipients</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="hs-popup">
+    <div class="hs-popup-tabs">
+      <div class="hs-popup-tab active" data-tab="fill">Fill</div>
+      <div class="hs-popup-tab" data-tab="manage">Manage</div>
+    </div>
+
+    <!-- Fill tab -->
+    <div class="hs-popup-view active" id="view-fill">
+      <div class="hs-row">
+        <select id="fill-set-sel"></select>
+      </div>
+      <div class="hs-row">
+        <div class="hs-ext-toggle" id="fill-mode-toggle">
+          <button class="active" data-mode="replace">Replace</button>
+          <button data-mode="append">Append</button>
+        </div>
+        <button class="hs-btn-primary" id="fill-btn">Fill</button>
+      </div>
+      <div id="popup-status"></div>
+    </div>
+
+    <!-- Manage tab -->
+    <div class="hs-popup-view" id="view-manage">
+      <div class="hs-row">
+        <input type="text" id="new-set-name" placeholder="New set name…" />
+        <button class="hs-btn-secondary" id="add-set-btn">Add set</button>
+      </div>
+      <div id="sets-list"></div>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
