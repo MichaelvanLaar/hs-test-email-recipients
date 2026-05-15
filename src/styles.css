@@ -96,6 +96,15 @@
 
 /* === Popup (320 px wide) === */
 body.hs-popup {
+  --hs-bg: #fff;
+  --hs-surface: #f5f8fa;
+  --hs-text: #33475b;
+  --hs-text-muted: #7c98b6;
+  --hs-border: #cbd6e2;
+  --hs-accent: #00a4c4;
+  --hs-danger: #f2545b;
+  --hs-input-bg: #fff;
+
   width: fit-content;
   min-width: 320px;
   max-width: 480px;
@@ -108,13 +117,14 @@ body.hs-popup {
     Arial,
     sans-serif;
   font-size: 13px;
-  color: #33475b;
+  color: var(--hs-text);
+  background: var(--hs-bg);
   box-sizing: border-box;
 }
 
 .hs-popup-tabs {
   display: flex;
-  border-bottom: 2px solid #cbd6e2;
+  border-bottom: 2px solid var(--hs-border);
   margin-bottom: 12px;
 }
 
@@ -127,8 +137,8 @@ body.hs-popup {
 }
 
 .hs-popup-tab.active {
-  border-bottom-color: #00a4c4;
-  color: #00a4c4;
+  border-bottom-color: var(--hs-accent);
+  color: var(--hs-accent);
 }
 
 .hs-popup-view {
@@ -150,10 +160,11 @@ body.hs-popup {
 .hs-row input[type="email"] {
   flex: 1;
   padding: 5px 8px;
-  border: 1px solid #cbd6e2;
+  border: 1px solid var(--hs-border);
   border-radius: 3px;
   font-size: 13px;
-  color: #33475b;
+  color: var(--hs-text);
+  background: var(--hs-input-bg);
 }
 
 .hs-btn-primary {
@@ -174,9 +185,9 @@ body.hs-popup {
 
 .hs-btn-secondary {
   padding: 5px 10px;
-  background: #fff;
-  color: #33475b;
-  border: 1px solid #cbd6e2;
+  background: var(--hs-bg);
+  color: var(--hs-text);
+  border: 1px solid var(--hs-border);
   border-radius: 3px;
   cursor: pointer;
   font-size: 13px;
@@ -184,22 +195,22 @@ body.hs-popup {
 }
 
 input[type="email"]:invalid:not(:placeholder-shown) {
-  border-color: #f2545b;
-  outline-color: #f2545b;
+  border-color: var(--hs-danger);
+  outline-color: var(--hs-danger);
 }
 
 .hs-btn-danger {
   padding: 3px 8px;
-  background: #fff;
-  color: #f2545b;
-  border: 1px solid #f2545b;
+  background: var(--hs-bg);
+  color: var(--hs-danger);
+  border: 1px solid var(--hs-danger);
   border-radius: 3px;
   cursor: pointer;
   font-size: 12px;
 }
 
 .hs-set-item {
-  border: 1px solid #cbd6e2;
+  border: 1px solid var(--hs-border);
   border-radius: 4px;
   margin-bottom: 8px;
   overflow: hidden;
@@ -209,7 +220,7 @@ input[type="email"]:invalid:not(:placeholder-shown) {
   display: flex;
   align-items: center;
   padding: 6px 10px;
-  background: #f5f8fa;
+  background: var(--hs-surface);
   gap: 6px;
   cursor: pointer;
   user-select: none;
@@ -224,8 +235,8 @@ input[type="email"]:invalid:not(:placeholder-shown) {
 }
 
 .hs-set-header .hs-set-name:focus {
-  background: #fff;
-  box-shadow: 0 0 0 2px #00a4c4;
+  background: var(--hs-bg);
+  box-shadow: 0 0 0 2px var(--hs-accent);
 }
 
 .hs-set-body {
@@ -251,7 +262,7 @@ input[type="email"]:invalid:not(:placeholder-shown) {
 }
 
 .hs-empty {
-  color: #7c98b6;
+  color: var(--hs-text-muted);
   font-size: 12px;
   text-align: center;
   padding: 16px 0;
@@ -261,19 +272,19 @@ input[type="email"]:invalid:not(:placeholder-shown) {
   font-size: 12px;
   min-height: 16px;
   margin-top: 4px;
-  color: #7c98b6;
+  color: var(--hs-text-muted);
 }
 
 #popup-status.success {
-  color: #00a4c4;
+  color: var(--hs-accent);
 }
 #popup-status.error {
-  color: #f2545b;
+  color: var(--hs-danger);
 }
 
 .hs-field-label {
   font-size: 11px;
-  color: #7c98b6;
+  color: var(--hs-text-muted);
   font-weight: 500;
   display: block;
   margin-bottom: 3px;
@@ -281,7 +292,7 @@ input[type="email"]:invalid:not(:placeholder-shown) {
 
 .hs-fill-info {
   font-size: 12px;
-  color: #7c98b6;
+  color: var(--hs-text-muted);
   line-height: 1.5;
   padding: 4px 0;
 }
@@ -298,9 +309,37 @@ input[type="email"]:invalid:not(:placeholder-shown) {
   background: none;
   border: none;
   padding: 0;
-  color: #00a4c4;
+  color: var(--hs-accent);
   font-size: 12px;
   font-family: inherit;
   cursor: pointer;
   font-weight: 500;
+}
+
+/* === Dark mode (popup only) === */
+@media (prefers-color-scheme: dark) {
+  body.hs-popup {
+    --hs-bg: #1c2233;
+    --hs-surface: #242d41;
+    --hs-text: #d6e0ef;
+    --hs-text-muted: #8faac8;
+    --hs-border: #3a4d6a;
+    --hs-accent: #00c4e6;
+    --hs-input-bg: #2a3549;
+  }
+
+  /* Override shared .hs-ext-toggle styles for popup context */
+  body.hs-popup .hs-ext-toggle {
+    border-color: var(--hs-border);
+  }
+
+  body.hs-popup .hs-ext-toggle button {
+    background: var(--hs-bg);
+    color: var(--hs-text);
+  }
+
+  body.hs-popup .hs-ext-toggle button.active {
+    background: var(--hs-accent);
+    color: #fff;
+  }
 }
