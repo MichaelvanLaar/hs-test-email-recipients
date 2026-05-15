@@ -29,7 +29,7 @@
   },
   "noSetsYet": { "message": "No sets yet." },
   "deleteButton": { "message": "Delete" },
-  "addEmailPlaceholder": { "message": "Add address…" },
+  "addEmailPlaceholder": { "message": "Add email address…" },
   "addEmailButton": { "message": "Add" },
   "confirmDeleteSet": {
     "message": "Delete \"$NAME$\"?",

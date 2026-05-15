@@ -96,7 +96,17 @@ async function buildBar(fieldEl) {
   bar.id = "hs-ext-fill-bar";
 
   if (sets.length === 0) {
-    bar.innerHTML = `<span class="hs-ext-bar-msg">${chrome.i18n.getMessage("barNoSets")}</span>`;
+    const msg = document.createElement("span");
+    msg.className = "hs-ext-bar-msg";
+    const icon = document.createElement("img");
+    icon.src = chrome.runtime.getURL("icons/icon16.png");
+    icon.className = "hs-ext-bar-icon";
+    icon.alt = "";
+    msg.appendChild(icon);
+    msg.appendChild(
+      document.createTextNode(chrome.i18n.getMessage("barNoSets")),
+    );
+    bar.appendChild(msg);
     return bar;
   }
 

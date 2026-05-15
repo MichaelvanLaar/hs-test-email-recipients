@@ -223,9 +223,13 @@ async function renderManage() {
     // Add email
     const addInput = item.querySelector(".js-add-email-input");
     const doAdd = async () => {
-      const email = addInput.value.trim();
-      if (!email) return;
-      await updateSet(set.id, { emails: [...set.emails, email] });
+      addInput.value = addInput.value.trim();
+      if (!addInput.value) return;
+      if (!addInput.checkValidity()) {
+        addInput.reportValidity();
+        return;
+      }
+      await updateSet(set.id, { emails: [...set.emails, addInput.value] });
       renderManage();
     };
     item.querySelector(".js-add-email").addEventListener("click", doAdd);

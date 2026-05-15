@@ -83,6 +83,13 @@
   flex: 1;
 }
 
+.hs-ext-bar-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
 .hs-ext-bar-msg.error {
   color: #f2545b;
 }
@@ -172,6 +179,11 @@ body.hs-popup {
   cursor: pointer;
   font-size: 13px;
   white-space: nowrap;
+}
+
+input[type="email"]:invalid:not(:placeholder-shown) {
+  border-color: #f2545b;
+  outline-color: #f2545b;
 }
 
 .hs-btn-danger {

@@ -6,7 +6,7 @@
   "tabFill": { "message": "Ausfüllen" },
   "tabManage": { "message": "Verwalten" },
   "fillInfoMessage": {
-    "message": "Kein Empfängerfeld gefunden. Öffne HubSpot und den Testversand-Dialog, um diesen Tab zu nutzen."
+    "message": "Kein Empfängerfeld gefunden. Öffnen Sie HubSpot und den Testversand-Dialog, um diesen Tab zu nutzen."
   },
   "fillInfoGoToManage": { "message": "Zu Verwalten →" },
   "fillInfoSetupText": { "message": "um Empfängerlisten einzurichten." },
@@ -31,14 +31,14 @@
   },
   "noSetsYet": { "message": "Noch keine Listen." },
   "deleteButton": { "message": "Löschen" },
-  "addEmailPlaceholder": { "message": "Adresse hinzufügen…" },
+  "addEmailPlaceholder": { "message": "E-Mail-Adresse hinzufügen…" },
   "addEmailButton": { "message": "Hinzufügen" },
   "confirmDeleteSet": {
     "message": "„$NAME$“ löschen?",
     "placeholders": { "name": { "content": "$1" } }
   },
   "barNoSets": {
-    "message": "Keine Listen – füge welche im Erweiterungspopup hinzu."
+    "message": "Keine Listen – fügen Sie welche im Erweiterungspopup hinzu."
   },
   "barHeading": { "message": "Empfängerliste verwenden" },
   "inputNotFound": {
