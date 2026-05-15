@@ -21,7 +21,7 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 
 - **Test:** `npm test`
 - **Build:** None — load unpacked from repo root in `chrome://extensions`
-- **Lint/Format:** None configured yet
+- **Format:** `npx prettier --write .` (runs automatically via PostToolUse hook on every edit)
 
 ## Structure
 
