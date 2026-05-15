@@ -14,26 +14,57 @@ function setStatus(msg, kind = "") {
 
 // ── Tab switching ─────────────────────────────────────────────────────────────
 
+function switchTab(name) {
+  document
+    .querySelectorAll(".hs-popup-tab")
+    .forEach((t) => t.classList.remove("active"));
+  document
+    .querySelectorAll(".hs-popup-view")
+    .forEach((v) => v.classList.remove("active"));
+  document.querySelector(`[data-tab="${name}"]`).classList.add("active");
+  document.getElementById(`view-${name}`).classList.add("active");
+  if (name === "fill") renderFill();
+  else renderManage();
+}
+
 document.querySelectorAll(".hs-popup-tab").forEach((tab) => {
-  tab.addEventListener("click", () => {
-    document
-      .querySelectorAll(".hs-popup-tab")
-      .forEach((t) => t.classList.remove("active"));
-    document
-      .querySelectorAll(".hs-popup-view")
-      .forEach((v) => v.classList.remove("active"));
-    tab.classList.add("active");
-    document.getElementById(`view-${tab.dataset.tab}`).classList.add("active");
-    if (tab.dataset.tab === "fill") renderFill();
-    else renderManage();
-  });
+  tab.addEventListener("click", () => switchTab(tab.dataset.tab));
 });
+
+async function checkActiveTabField() {
+  const [tab] = await chrome.tabs.query({
+    active: true,
+    currentWindow: true,
+  });
+  if (!tab?.id) return false;
+  try {
+    const res = await chrome.tabs.sendMessage(tab.id, {
+      action: "checkField",
+    });
+    return res?.present === true;
+  } catch {
+    return false;
+  }
+}
 
 // ── Fill tab ──────────────────────────────────────────────────────────────────
 
 let fillMode = "replace";
 
 async function renderFill() {
+  const present = await checkActiveTabField();
+  const infoEl = document.getElementById("fill-info");
+  const controlsEl = document.getElementById("fill-controls");
+
+  if (!present) {
+    infoEl.hidden = false;
+    controlsEl.hidden = true;
+    return;
+  }
+
+  infoEl.hidden = true;
+  controlsEl.hidden = false;
+
   const sets = await getSets();
   const sel = document.getElementById("fill-set-sel");
   const fillBtn = document.getElementById("fill-btn");
@@ -70,6 +101,10 @@ document
       fillMode = btn.dataset.mode;
     });
   });
+
+document.getElementById("go-to-manage").addEventListener("click", () => {
+  switchTab("manage");
+});
 
 document.getElementById("fill-btn").addEventListener("click", async () => {
   const sets = await getSets();
