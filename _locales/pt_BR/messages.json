@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "Destinatários de teste HubSpot" },
+  "extDescription": {
+    "message": "Preenche os campos de destinatários de e-mails de teste do HubSpot com listas de endereços predefinidas."
+  },
+  "tabFill": { "message": "Preencher" },
+  "tabManage": { "message": "Gerenciar" },
+  "fillInfoMessage": {
+    "message": "Nenhum campo de destinatário encontrado. Abra o HubSpot e o diálogo de envio de e-mail de teste para usar esta aba."
+  },
+  "fillInfoGoToManage": { "message": "Ir para gerenciamento de listas →" },
+  "fillInfoSetupText": {
+    "message": "para configurar listas de destinatários."
+  },
+  "fillLabelRecipientList": { "message": "Lista de destinatários" },
+  "fillLabelFillMode": { "message": "Modo de preenchimento" },
+  "fillModeReplace": { "message": "Substituir" },
+  "fillModeAppend": { "message": "Adicionar" },
+  "fillButton": { "message": "Preencher" },
+  "newSetNamePlaceholder": { "message": "Nome da nova lista …" },
+  "addSetButton": { "message": "Adicionar lista" },
+  "noSetsYetOption": {
+    "message": "Nenhuma lista — vá para o gerenciamento de listas para adicionar listas de destinatários."
+  },
+  "noActiveTab": { "message": "Nenhuma aba ativa encontrada." },
+  "filledOne": { "message": "1 endereço inserido." },
+  "filledMany": {
+    "message": "$COUNT$ endereços inseridos.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "contentScriptNotReachable": {
+    "message": "Script de conteúdo inacessível. O HubSpot está aberto com o diálogo de envio de e-mail de teste?"
+  },
+  "noSetsYet": { "message": "Nenhuma lista." },
+  "deleteButton": { "message": "Excluir" },
+  "addEmailPlaceholder": { "message": "Adicionar endereço de e-mail …" },
+  "addEmailButton": { "message": "Adicionar" },
+  "confirmDeleteSet": {
+    "message": "Excluir \"$NAME$\"?",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "barNoSets": {
+    "message": "Nenhuma lista. Abra o pop-up da extensão."
+  },
+  "barHeading": { "message": "Usar lista de destinatários" },
+  "inputNotFound": {
+    "message": "Campo não encontrado — o diálogo de envio de e-mail de teste está aberto?"
+  }
+}
