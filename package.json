@@ -9,7 +9,7 @@
   "devDependencies": {
     "jest": "^29.0.0",
     "jest-chrome": "^0.8.0",
-    "jest-environment-jsdom": "^30.4.1",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.8.3",
     "sharp": "^0.34.5"
   },
@@ -18,6 +18,13 @@
     "setupFiles": [
       "./tests/setup.cjs"
     ],
-    "transform": {}
+    "transform": {},
+    "coverageThreshold": {
+      "global": {
+        "lines": 70,
+        "branches": 60,
+        "functions": 70
+      }
+    }
   }
 }
