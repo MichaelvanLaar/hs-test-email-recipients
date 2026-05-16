@@ -94,6 +94,22 @@
   color: #f2545b;
 }
 
+/* === Popup header bar === */
+.hs-popup-header {
+  margin: -12px -12px 12px;
+  padding: 8px 12px;
+  background: #ff7a59;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hs-popup-header {
+    background: #cc5f40;
+  }
+}
+
 /* === Popup (320 px wide) === */
 body.hs-popup {
   width: fit-content;

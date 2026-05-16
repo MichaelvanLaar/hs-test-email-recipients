@@ -1,5 +1,6 @@
 {
   "extName": { "message": "HubSpot Test Email Recipients" },
+  "popupHeader": { "message": "Recipient Lists for HubSpot Test Emails" },
   "extDescription": {
     "message": "Fill HubSpot test-email recipient fields with pre-defined address lists."
   },
