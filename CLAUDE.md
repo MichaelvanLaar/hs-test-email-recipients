@@ -4,18 +4,18 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 
 ## Key Config Files
 
-| File | Purpose |
-|------|---------|
-| `.claude/learnings.md` | Per-session corrections that accumulate over time |
-| `.claude/settings.json` | Permissions, hooks, environment variables |
-| `.claudeignore` | Paths excluded from Claude Code indexing |
-| `.gitignore` | Git ignore patterns |
-| `CLAUDE.md` | Project instructions, loaded every message |
-| `LICENSE` | MIT license |
-| `manifest.json` | Chrome MV3 manifest — permissions, content scripts, popup, icons |
-| `package.json` | Node dependencies, test command, Jest configuration |
-| `scripts/generate-icons.js` | TODO: add description |
-| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
+| File                           | Purpose                                                          |
+| ------------------------------ | ---------------------------------------------------------------- |
+| `.claude/learnings.md`         | Per-session corrections that accumulate over time                |
+| `.claude/settings.json`        | Permissions, hooks, environment variables                        |
+| `.claudeignore`                | Paths excluded from Claude Code indexing                         |
+| `.gitignore`                   | Git ignore patterns                                              |
+| `CLAUDE.md`                    | Project instructions, loaded every message                       |
+| `LICENSE`                      | MIT license                                                      |
+| `manifest.json`                | Chrome MV3 manifest — permissions, content scripts, popup, icons |
+| `package.json`                 | Node dependencies, test command, Jest configuration              |
+| `scripts/generate-icons.js`    | TODO: add description                                            |
+| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync                |
 
 ## Commands
 
