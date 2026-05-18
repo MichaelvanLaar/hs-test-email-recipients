@@ -1,0 +1,47 @@
+{
+  "extName": { "message": "HubSpot test-e-mailontvangers" },
+  "extDescription": {
+    "message": "Vult HubSpot-testmail-ontvangersvelden in met vooraf gedefinieerde adreslijsten."
+  },
+  "tabFill": { "message": "Invullen" },
+  "tabManage": { "message": "Beheren" },
+  "fillInfoMessage": {
+    "message": "Geen ontvangerveld gevonden. Open HubSpot en het dialoogvenster voor test-e-mail verzenden om dit tabblad te gebruiken."
+  },
+  "fillInfoGoToManage": { "message": "Naar lijstbeheer →" },
+  "fillInfoSetupText": { "message": "om ontvangerlijsten in te stellen." },
+  "fillLabelRecipientList": { "message": "Ontvangerlijst" },
+  "fillLabelFillMode": { "message": "Invulmodus" },
+  "fillModeReplace": { "message": "Vervangen" },
+  "fillModeAppend": { "message": "Toevoegen" },
+  "fillButton": { "message": "Invullen" },
+  "newSetNamePlaceholder": { "message": "Naam van nieuwe lijst …" },
+  "addSetButton": { "message": "Lijst toevoegen" },
+  "noSetsYetOption": {
+    "message": "Nog geen lijsten — ga naar lijstbeheer om ontvangerlijsten toe te voegen."
+  },
+  "noActiveTab": { "message": "Geen actief tabblad gevonden." },
+  "filledOne": { "message": "1 adres ingevoegd." },
+  "filledMany": {
+    "message": "$COUNT$ adressen ingevoegd.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "contentScriptNotReachable": {
+    "message": "Content-script niet bereikbaar. Is HubSpot open met het dialoogvenster voor test-e-mail verzenden?"
+  },
+  "noSetsYet": { "message": "Nog geen lijsten." },
+  "deleteButton": { "message": "Verwijderen" },
+  "addEmailPlaceholder": { "message": "E-mailadres toevoegen …" },
+  "addEmailButton": { "message": "Toevoegen" },
+  "confirmDeleteSet": {
+    "message": "\"$NAME$\" verwijderen?",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "barNoSets": {
+    "message": "Geen lijsten. Open de pop-up van de extensie."
+  },
+  "barHeading": { "message": "Ontvangerlijst gebruiken" },
+  "inputNotFound": {
+    "message": "Invoerveld niet gevonden — is het dialoogvenster voor test-e-mail verzenden open?"
+  }
+}

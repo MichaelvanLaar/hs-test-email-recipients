@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "Destinatarios de prueba de HubSpot" },
+  "extDescription": {
+    "message": "Rellena los campos de destinatarios de correos de prueba de HubSpot con listas de direcciones predefinidas."
+  },
+  "tabFill": { "message": "Rellenar" },
+  "tabManage": { "message": "Gestionar" },
+  "fillInfoMessage": {
+    "message": "No se encontró ningún campo de destinatario. Abre HubSpot y el diálogo de envío de correo de prueba para usar esta pestaña."
+  },
+  "fillInfoGoToManage": { "message": "Ir a la gestión de listas →" },
+  "fillInfoSetupText": {
+    "message": "para configurar listas de destinatarios."
+  },
+  "fillLabelRecipientList": { "message": "Lista de destinatarios" },
+  "fillLabelFillMode": { "message": "Modo de relleno" },
+  "fillModeReplace": { "message": "Reemplazar" },
+  "fillModeAppend": { "message": "Añadir" },
+  "fillButton": { "message": "Rellenar" },
+  "newSetNamePlaceholder": { "message": "Nombre de la nueva lista …" },
+  "addSetButton": { "message": "Añadir lista" },
+  "noSetsYetOption": {
+    "message": "No hay listas — ve a la gestión de listas para añadir listas de destinatarios."
+  },
+  "noActiveTab": { "message": "No se encontró ninguna pestaña activa." },
+  "filledOne": { "message": "1 dirección insertada." },
+  "filledMany": {
+    "message": "$COUNT$ direcciones insertadas.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "contentScriptNotReachable": {
+    "message": "Script de contenido inaccesible. ¿Está HubSpot abierto con el diálogo de envío de correo de prueba?"
+  },
+  "noSetsYet": { "message": "No hay listas." },
+  "deleteButton": { "message": "Eliminar" },
+  "addEmailPlaceholder": { "message": "Añadir dirección de correo …" },
+  "addEmailButton": { "message": "Añadir" },
+  "confirmDeleteSet": {
+    "message": "¿Eliminar «$NAME$»?",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "barNoSets": {
+    "message": "No hay listas. Abre el pop-up de la extensión."
+  },
+  "barHeading": { "message": "Usar lista de destinatarios" },
+  "inputNotFound": {
+    "message": "Campo no encontrado — ¿está abierto el diálogo de envío de correo de prueba?"
+  }
+}

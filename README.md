@@ -8,7 +8,7 @@ A Chrome extension that fills HubSpot’s test-email recipient field with pre-de
 - **In-page fill bar** — appears directly below the recipient field when the HubSpot send-test dialog is open; no need to open the popup
 - **Replace or Append** — choose whether to overwrite the current recipients or add to them
 - **Manage from the popup** — create, rename, and delete lists; add or remove individual addresses
-- **Multilingual** — English and German, following the browser locale automatically
+- **Multilingual** — English, German, French, Spanish, Italian, Dutch, and Portuguese, following the browser locale automatically
 
 ## Installation
 
@@ -51,12 +51,20 @@ Use the **Manage** tab to maintain your recipient lists:
 
 The extension uses the Chrome i18n API. The active locale is picked automatically from the browser language setting, with English as the fallback.
 
-| Locale         | Status   |
-| -------------- | -------- |
-| English (`en`) | Included |
-| German (`de`)  | Included |
+| Locale                         | Status   |
+| ------------------------------ | -------- |
+| English (`en`)                 | Included |
+| German (`de`)                  | Included |
+| French (`fr`)                  | Included |
+| Spanish (`es`)                 | Included |
+| Italian (`it`)                 | Included |
+| Dutch (`nl`)                   | Included |
+| Portuguese, Brazil (`pt_BR`)   | Included |
+| Portuguese, Portugal (`pt_PT`) | Included |
 
 To add another language, create `_locales/<locale>/messages.json` using `_locales/en/messages.json` as a template. All keys must be present; no code changes are required.
+
+If a translation in your language sounds off, please [open a GitHub issue](https://github.com/MichaelvanLaar/hs-test-email-recipients/issues/new) with the corrected wording — contributions are welcome.
 
 ## Development
 
@@ -79,8 +87,14 @@ npx prettier --write .
 
 ```
 _locales/          Chrome i18n message files
-  en/messages.json
   de/messages.json
+  en/messages.json
+  es/messages.json
+  fr/messages.json
+  it/messages.json
+  nl/messages.json
+  pt_BR/messages.json
+  pt_PT/messages.json
 icons/             Extension icons (16 px, 48 px, 128 px)
 scripts/           Utility scripts (icon generation, CLAUDE.md sync)
 src/

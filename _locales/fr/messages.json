@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "Destinataires de test HubSpot" },
+  "extDescription": {
+    "message": "Remplit les champs de destinataires des e-mails de test HubSpot avec des listes d'adresses prédéfinies."
+  },
+  "tabFill": { "message": "Remplir" },
+  "tabManage": { "message": "Gérer" },
+  "fillInfoMessage": {
+    "message": "Aucun champ de destinataire trouvé. Ouvrez HubSpot et la boîte de dialogue d'envoi d'e-mail de test pour utiliser cet onglet."
+  },
+  "fillInfoGoToManage": { "message": "Aller à la gestion des listes →" },
+  "fillInfoSetupText": {
+    "message": "pour configurer les listes de destinataires."
+  },
+  "fillLabelRecipientList": { "message": "Liste de destinataires" },
+  "fillLabelFillMode": { "message": "Mode de remplissage" },
+  "fillModeReplace": { "message": "Remplacer" },
+  "fillModeAppend": { "message": "Ajouter" },
+  "fillButton": { "message": "Remplir" },
+  "newSetNamePlaceholder": { "message": "Nom de la nouvelle liste …" },
+  "addSetButton": { "message": "Ajouter une liste" },
+  "noSetsYetOption": {
+    "message": "Aucune liste — allez dans la gestion des listes pour ajouter des listes de destinataires."
+  },
+  "noActiveTab": { "message": "Aucun onglet actif trouvé." },
+  "filledOne": { "message": "1 adresse insérée." },
+  "filledMany": {
+    "message": "$COUNT$ adresses insérées.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "contentScriptNotReachable": {
+    "message": "Script de contenu inaccessible. HubSpot est-il ouvert avec la boîte de dialogue d'envoi d'e-mail de test ?"
+  },
+  "noSetsYet": { "message": "Aucune liste." },
+  "deleteButton": { "message": "Supprimer" },
+  "addEmailPlaceholder": { "message": "Ajouter une adresse e-mail …" },
+  "addEmailButton": { "message": "Ajouter" },
+  "confirmDeleteSet": {
+    "message": "Supprimer « $NAME$ » ?",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "barNoSets": {
+    "message": "Aucune liste. Ouvrez le pop-up de l'extension."
+  },
+  "barHeading": { "message": "Utiliser une liste de destinataires" },
+  "inputNotFound": {
+    "message": "Champ introuvable — la boîte de dialogue d'envoi d'e-mail de test est-elle ouverte ?"
+  }
+}
