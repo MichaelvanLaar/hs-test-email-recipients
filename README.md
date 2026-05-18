@@ -1,4 +1,4 @@
-# Recipient Lists for HubSpot Test Emails
+# Test Email Recipient Lists for HubSpot
 
 A Chrome extension that fills HubSpot’s test-email recipient field with pre-defined address lists, so you don’t have to type them by hand every time. Very useful if you have several groups of test recipients you use regularly.
 

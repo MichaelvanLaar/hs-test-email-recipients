@@ -7,12 +7,10 @@ All texts ready to copy-paste into the Chrome Web Store Developer Dashboard.
 ## 1. Extension name
 
 ```
-HubSpot Test Email Recipients
+Test Email Recipient Lists for HubSpot
 ```
 
-> **Note:** The Chrome Web Store policy allows descriptive use of a platform name in an extension title (e.g. "for HubSpot") as long as the listing makes clear there is no affiliation. The disclaimer in the detailed description below covers this. If the review team rejects the name, the alternative title below is a safe fallback.
->
-> **Alternative title:** `Test Email Recipients for HubSpot`
+> **Note:** The Chrome Web Store policy allows descriptive use of a platform name in an extension title (e.g. "for HubSpot") as long as the listing makes clear there is no affiliation. The disclaimer in the detailed description below covers this.
 
 ---
 
@@ -35,24 +33,24 @@ _Limit: 16,000 characters. Supports plain text only — no HTML or Markdown._
 ```
 Stop retyping the same email addresses every time you send a HubSpot test email.
 
-HubSpot Test Email Recipients lets you save named groups of email addresses and fill the "Send test to" field with a single click — directly from an in-page bar that appears right below the recipient field, or from the extension popup.
+Test Email Recipient Lists for HubSpot lets you save named groups of email addresses and fill the “Send test to” field with a single click — directly from an in-page bar that appears right below the recipient field, or from the extension popup.
 
 
 FEATURES
 
-• Recipient lists — create as many named lists as you need and reuse them across every test send
-• In-page fill bar — a compact bar appears automatically below the recipient field when the HubSpot send-test dialog is open; no need to open the popup
-• Replace or Append — overwrite the current recipients, or add your list on top of whatever is already there
-• Full list management — create, rename, and delete lists; add or remove individual addresses at any time
-• Purely local — all data is stored in your browser profile only; nothing is ever sent to any server
-• Multilingual — English, German, French, Spanish, Italian, Dutch, and Brazilian Portuguese; the language follows your browser setting automatically
+• Recipient lists: Create as many named lists as you need and reuse them across every test send.
+• In-page fill bar: A compact bar appears automatically below the recipient field when the HubSpot send-test dialog is open. No need to open the popup.
+• Replace or Append: Overwrite the current recipients, or add your list on top of whatever is already there.
+• Full list management: Create, rename, and delete lists. Add or remove individual addresses at any time.
+• Purely local: All data is stored in your browser profile only. Nothing is ever sent to any server.
+• Multilingual: English, German, French, Spanish, Italian, Dutch, and Portuguese. The language follows your browser setting automatically.
 
 
 HOW TO USE
 
 In-page fill bar
-1. Open a HubSpot email draft and click "Send test email" to open the dialog.
-2. A small bar labelled "Use recipient list" appears below the "Send test to" field.
+1. Open a HubSpot email draft and click “Send test email” to open the dialog.
+2. A small bar labelled “Use recipient list” appears below the “Send test to” field.
 3. Choose a list from the dropdown, select Replace or Append, and click Fill.
 
 Popup — Fill tab
@@ -60,29 +58,29 @@ Click the extension icon in the toolbar. The Fill tab mirrors the in-page bar an
 
 Popup — Manage tab
 Use the Manage tab to maintain your lists:
-• Type a name and click "Add list" to create a new list.
+• Type a name and click “Add list” to create a new list.
 • Click a list name to rename it in place.
-• Expand a list, type an address and press Enter (or click Add) to add a recipient.
-• Click × next to any address to remove it.
-• Click Delete on a list header to remove the entire list.
+• Expand a list, type an address and press Enter (or click “Add”) to add a recipient.
+• Click “×” next to any address to remove it.
+• Click “Delete” on a list header to remove the entire list.
 
 
 PERMISSIONS
 
-• Storage — saves your recipient lists locally in the browser (chrome.storage.local). No data leaves your device.
-• Access to hubspot.com — required to inject the fill bar into HubSpot pages and to read/fill the recipient field.
+• Storage: Saves your recipient lists locally in the browser (chrome.storage.local). No data leaves your device.
+• Access to hubspot.com: Required to inject the fill bar into HubSpot pages and to read/fill the recipient field.
 
 No other permissions are requested.
 
 
 PRIVACY
 
-This extension does not collect, transmit, or share any personal data. Your email address lists are stored exclusively in your browser's local storage and never leave your device. There is no analytics, no tracking, and no external server communication of any kind.
+This extension does not collect, transmit, or share any personal data. Your email address lists are stored exclusively in your browser’s local storage and never leave your device. There is no analytics, no tracking, and no external server communication of any kind.
 
 
 DISCLAIMER
 
-This extension is an independent, community-built productivity tool. It is not affiliated with, endorsed by, or in any way officially connected to HubSpot, Inc. "HubSpot" is a registered trademark of HubSpot, Inc. All product and company names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or endorsement.
+This extension is an independent, community-built productivity tool. It is not affiliated with, endorsed by, or in any way officially connected to HubSpot, Inc. “HubSpot” is a registered trademark of HubSpot, Inc. All product and company names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or endorsement.
 
 
 SOURCE CODE
