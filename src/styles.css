@@ -32,6 +32,7 @@
 
 .hs-ext-set-select {
   flex: 1;
+  min-width: 0;
   padding: 4px 6px;
   border: 1px solid #cbd6e2;
   border-radius: 3px;
@@ -42,6 +43,7 @@
 
 .hs-ext-toggle {
   display: flex;
+  flex-shrink: 0;
   border: 1px solid #cbd6e2;
   border-radius: 3px;
   overflow: hidden;
@@ -54,6 +56,7 @@
   font-size: 12px;
   cursor: pointer;
   color: #33475b;
+  white-space: nowrap;
 }
 
 .hs-ext-toggle button.active {
@@ -62,6 +65,7 @@
 }
 
 .hs-ext-fill-btn {
+  flex-shrink: 0;
   padding: 4px 12px;
   background: #ff7a59;
   color: #fff;
