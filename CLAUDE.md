@@ -1,4 +1,4 @@
-# HubSpot Test Email Recipients
+# Test Email Recipient Lists for HubSpot
 
 Chrome extension (Manifest V3) — fills HubSpot test email recipient fields with pre-defined address sets stored in `chrome.storage.local`.
 

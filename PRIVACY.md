@@ -1,10 +1,10 @@
-# Privacy Policy — HubSpot Test Email Recipients
+# Privacy Policy — Test Email Recipient Lists for HubSpot
 
 **Last updated: 2026-05-18**
 
 ## What data this extension accesses
 
-HubSpot Test Email Recipients reads and writes named lists of email addresses that you create manually inside the extension. This data is stored exclusively in `chrome.storage.local`, which keeps it in your local browser profile on your device.
+Test Email Recipient Lists for HubSpot reads and writes named lists of email addresses that you create manually inside the extension. This data is stored exclusively in `chrome.storage.local`, which keeps it in your local browser profile on your device.
 
 ## What data this extension does NOT collect
 

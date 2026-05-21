@@ -1,4 +1,4 @@
-# Chrome Web Store Listing — HubSpot Test Email Recipients
+# Chrome Web Store Listing — Test Email Recipient Lists for HubSpot
 
 All texts ready to copy-paste into the Chrome Web Store Developer Dashboard.
 
@@ -161,4 +161,22 @@ _Required field in the Developer Dashboard ("Does your extension have a single p
 
 ```
 Fills the HubSpot test-email recipient field with pre-saved address lists.
+```
+
+---
+
+## 12. Permission justifications
+
+_Required fields in the Developer Dashboard → Privacy section. One field per permission._
+
+### `storage`
+
+```
+The extension uses chrome.storage.local to save named recipient lists on the user's device. This is the core function of the extension — without storage, lists cannot be persisted between browser sessions. All data stays in the local browser profile and is never sent to any server or synced to a Google account.
+```
+
+### Host permission (`*://*.hubspot.com/*`)
+
+```
+The extension injects a small fill bar into HubSpot pages so it can detect when the "Send test email" dialog is open and populate the recipient field with a saved address list. Access to hubspot.com pages is required for the content script to operate. No data is read from HubSpot pages beyond detecting the presence of the recipient input field and writing addresses into it.
 ```
