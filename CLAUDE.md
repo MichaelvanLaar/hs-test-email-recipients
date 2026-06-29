@@ -6,9 +6,10 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 
 | File | Purpose |
 |------|---------|
+| `.claude/learnings.md` | TODO: add description |
 | `.claude/settings.json` | Permissions, hooks, environment variables |
 | `.claudeignore` | Paths excluded from Claude Code indexing |
-| `.github/workflows/test.yml` | TODO: add description |
+| `.github/workflows/test.yml` | Runs `npm test` on push and pull requests |
 | `.gitignore` | Git ignore patterns |
 | `CLAUDE.md` | Project instructions, loaded every message |
 | `LICENSE` | MIT license |
