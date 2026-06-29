@@ -7,3 +7,6 @@ temp/
 # Claude Code — personal files
 .claude/settings.local.json
 .claude/local.md
+
+# Headroom — machine-local session cache and learnings
+.headroom/
