@@ -4,25 +4,28 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 
 ## Key Config Files
 
-| File | Purpose |
-|------|---------|
-| `.claude/learnings.md` | TODO: add description |
-| `.claude/settings.json` | Permissions, hooks, environment variables |
-| `.claudeignore` | Paths excluded from Claude Code indexing |
-| `.github/workflows/test.yml` | Runs `npm test` on push and pull requests |
-| `.gitignore` | Git ignore patterns |
-| `CLAUDE.md` | Project instructions, loaded every message |
-| `LICENSE` | MIT license |
-| `manifest.json` | Chrome MV3 manifest — permissions, content scripts, popup, icons |
-| `package.json` | Node dependencies, test command, Jest configuration |
-| `scripts/generate-icons.js` | Generates 16/48/128 px PNG icons from the SVG source using sharp |
-| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync |
+| File                                               | Purpose                                                                              |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `.claudeignore`                                    | Paths excluded from Claude Code indexing                                             |
+| `.claude/learnings.md`                             | TODO: add description                                                                |
+| `CLAUDE.md`                                        | Project instructions, loaded every message                                           |
+| `.claude/settings.json`                            | Permissions, hooks, environment variables                                            |
+| `.claude/skills/publish-chrome-extension/SKILL.md` | Release checklist: version bump, packaging, GitHub release, Chrome Web Store handoff |
+| `.github/workflows/test.yml`                       | Runs `npm test` on push and pull requests                                            |
+| `.gitignore`                                       | Git ignore patterns                                                                  |
+| `LICENSE`                                          | MIT license                                                                          |
+| `manifest.json`                                    | Chrome MV3 manifest — permissions, content scripts, popup, icons                     |
+| `package.json`                                     | Node dependencies, test command, Jest configuration                                  |
+| `scripts/generate-icons.js`                        | Generates 16/48/128 px PNG icons from the SVG source using sharp                     |
+| `scripts/package-extension.js`                     | Zips manifest + runtime folders into a Chrome-Web-Store-ready dist/\*.zip            |
+| `scripts/sync-config-table.sh`                     | Keeps Key Config Files table in CLAUDE.md in sync                                    |
 
 ## Commands
 
 - **Install:** `npm install --legacy-peer-deps` (required — jest-chrome@0.8.0 has a peer conflict with jest@29)
 - **Test:** `npm test`
-- **Build:** None — load unpacked from repo root in `chrome://extensions`
+- **Build:** None for local dev — load unpacked from repo root in `chrome://extensions`
+- **Package:** `npm run package` — zips the runtime footprint (`manifest.json`, `src/`, `icons/`, `_locales/`) into `dist/*.zip` for Chrome Web Store submission; see the `publish-chrome-extension` skill for the full release checklist
 - **Format:** `npx prettier --write .` (runs automatically via PostToolUse hook on every edit)
 
 ## Structure
