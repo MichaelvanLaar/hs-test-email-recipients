@@ -11,6 +11,8 @@ Chrome extension (Manifest V3) — fills HubSpot test email recipient fields wit
 | `CLAUDE.md` | Project instructions, loaded every message |
 | `.claude/settings.json` | Permissions, hooks, environment variables |
 | `.claude/skills/publish-chrome-extension/SKILL.md` | Release checklist: version bump, packaging, GitHub release, Chrome Web Store handoff |
+| `.github/workflows/claude-code-review.yml` | TODO: add description |
+| `.github/workflows/claude.yml` | TODO: add description |
 | `.github/workflows/test.yml` | Runs `npm test` on push and pull requests |
 | `.gitignore` | Git ignore patterns |
 | `LICENSE` | MIT license |
