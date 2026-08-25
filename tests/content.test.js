@@ -23,9 +23,9 @@ function callListener(msg) {
   });
 }
 
-async function injectField({ withInput = false } = {}) {
+async function injectField({ withInput = false, attr = "data-test-id" } = {}) {
   const el = document.createElement("div");
-  el.setAttribute("data-test-id", "email-user-recipients-select");
+  el.setAttribute(attr, "email-user-recipients-select");
   if (withInput) {
     const input = document.createElement("input");
     input.setAttribute("role", "combobox");
@@ -88,6 +88,27 @@ describe("buildBar — no sets", () => {
   test("checkField responds with present: true after bar is built", async () => {
     const res = await callListener({ action: "checkField" });
     expect(res).toEqual({ present: true });
+  });
+});
+
+// ── buildBar — HubSpot beta UI (data-selenium attribute) ───────────────────────
+
+describe("buildBar — beta UI field attribute", () => {
+  let fieldEl;
+
+  beforeEach(async () => {
+    chrome.storage.local.get.mockImplementation((_keys, cb) =>
+      cb({ sets: [] }),
+    );
+    fieldEl = await injectField({ attr: "data-selenium" });
+  });
+
+  afterEach(async () => {
+    await removeField(fieldEl);
+  });
+
+  test("injects fill bar into DOM when only data-selenium is present", () => {
+    expect(document.getElementById("hs-ext-fill-bar")).not.toBeNull();
   });
 });
 
@@ -220,6 +241,42 @@ describe("fill message handler — field absent", () => {
       mode: "replace",
     });
     expect(res).toEqual({ ok: true });
+  });
+});
+
+// ── clearTags (replace mode) ────────────────────────────────────────────────────
+
+describe("fill message handler — replace mode clears beta-UI tags", () => {
+  let fieldEl;
+
+  beforeEach(async () => {
+    chrome.storage.local.get.mockImplementation((_keys, cb) =>
+      cb({ sets: [] }),
+    );
+    fieldEl = await injectField({ withInput: true });
+  });
+
+  afterEach(async () => {
+    await removeField(fieldEl);
+  });
+
+  test("clicks tag remove buttons identified by data-action=close", async () => {
+    const removeBtn = document.createElement("div");
+    removeBtn.setAttribute("data-action", "close");
+    let clicked = false;
+    removeBtn.addEventListener("click", () => {
+      clicked = true;
+    });
+    fieldEl.appendChild(removeBtn);
+
+    await callListener({
+      action: "fill",
+      emails: ["a@b.com"],
+      mode: "replace",
+    });
+    await flush();
+
+    expect(clicked).toBe(true);
   });
 });
 

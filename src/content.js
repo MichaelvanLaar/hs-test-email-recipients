@@ -1,4 +1,5 @@
-const FIELD_SELECTOR = '[data-test-id="email-user-recipients-select"]';
+const FIELD_SELECTOR =
+  '[data-test-id="email-user-recipients-select"], [data-selenium="email-user-recipients-select"]';
 const nativeSetter = Object.getOwnPropertyDescriptor(
   HTMLInputElement.prototype,
   "value",
@@ -38,7 +39,7 @@ function delay(ms) {
 function clearTags(fieldEl) {
   // React Select renders per-value remove controls — try common class patterns
   const btns = fieldEl.querySelectorAll(
-    '[class*="value-icon"], [class*="value__remove"], [aria-label="Remove"]',
+    '[class*="value-icon"], [class*="value__remove"], [aria-label="Remove"], [data-action="close"]',
   );
   btns.forEach((b) => b.click());
 }
